@@ -26,14 +26,6 @@ db.mongoose
 
 
 
-app.use("/", require("./routes"));
-app.get("/", (req, res) => {
-  res.json({
-    message: "Welcome to the Marvel API!"
-  });
-});
-
-
 
 const PORT = process.env.PORT || 8080;
 
@@ -42,6 +34,14 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument)
 );
+
+app.use("/", require("./routes"));
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to the Marvel API!"
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
