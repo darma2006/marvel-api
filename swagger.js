@@ -6,8 +6,8 @@ const doc = {
     description: "CRUD API for Marvel Heroes and Movies",
     version: "1.0.0"
   },
-  host: "localhost:8080",
-  schemes: ["http"]
+  host: "marvel-api-13cc.onrender.com",
+  schemes: ["https"]
 };
 
 const outputFile = "./swagger.json";
