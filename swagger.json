@@ -25,6 +25,51 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Hero information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Spider-Man"
+                },
+                "realName": {
+                  "type": "string",
+                  "example": "Peter Parker"
+                },
+                "team": {
+                  "type": "string",
+                  "example": "Avengers"
+                },
+                "power": {
+                  "type": "string",
+                  "example": "Spider Powers"
+                },
+                "actor": {
+                  "type": "string",
+                  "example": "Tom Holland"
+                },
+                "firstAppearance": {
+                  "type": "number",
+                  "example": 1962
+                },
+                "isAlive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "universe": {
+                  "type": "string",
+                  "example": "Earth-616"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -69,6 +114,49 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated hero information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Spider-Man"
+                },
+                "realName": {
+                  "type": "string",
+                  "example": "Peter Parker"
+                },
+                "team": {
+                  "type": "string",
+                  "example": "Avengers"
+                },
+                "power": {
+                  "type": "string",
+                  "example": "Spider Powers"
+                },
+                "actor": {
+                  "type": "string",
+                  "example": "Tom Holland"
+                },
+                "firstAppearance": {
+                  "type": "number",
+                  "example": 1962
+                },
+                "isAlive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "universe": {
+                  "type": "string",
+                  "example": "Earth-616"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -123,6 +211,47 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Movie information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Iron Man"
+                },
+                "releaseYear": {
+                  "type": "number",
+                  "example": 2008
+                },
+                "director": {
+                  "type": "string",
+                  "example": "Jon Favreau"
+                },
+                "phase": {
+                  "type": "number",
+                  "example": 1
+                },
+                "duration": {
+                  "type": "number",
+                  "example": 126
+                },
+                "rating": {
+                  "type": "number",
+                  "example": 7.9
+                },
+                "boxOffice": {
+                  "type": "string",
+                  "example": "$585.8 million"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -167,6 +296,45 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated movie information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Iron Man"
+                },
+                "releaseYear": {
+                  "type": "number",
+                  "example": 2008
+                },
+                "director": {
+                  "type": "string",
+                  "example": "Jon Favreau"
+                },
+                "phase": {
+                  "type": "number",
+                  "example": 1
+                },
+                "duration": {
+                  "type": "number",
+                  "example": 126
+                },
+                "rating": {
+                  "type": "number",
+                  "example": 7.9
+                },
+                "boxOffice": {
+                  "type": "string",
+                  "example": "$585.8 million"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -221,6 +389,47 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Movie information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Iron Man"
+                },
+                "releaseYear": {
+                  "type": "number",
+                  "example": 2008
+                },
+                "director": {
+                  "type": "string",
+                  "example": "Jon Favreau"
+                },
+                "phase": {
+                  "type": "number",
+                  "example": 1
+                },
+                "duration": {
+                  "type": "number",
+                  "example": 126
+                },
+                "rating": {
+                  "type": "number",
+                  "example": 7.9
+                },
+                "boxOffice": {
+                  "type": "string",
+                  "example": "$585.8 million"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -265,6 +474,45 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated movie information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Iron Man"
+                },
+                "releaseYear": {
+                  "type": "number",
+                  "example": 2008
+                },
+                "director": {
+                  "type": "string",
+                  "example": "Jon Favreau"
+                },
+                "phase": {
+                  "type": "number",
+                  "example": 1
+                },
+                "duration": {
+                  "type": "number",
+                  "example": 126
+                },
+                "rating": {
+                  "type": "number",
+                  "example": 7.9
+                },
+                "boxOffice": {
+                  "type": "string",
+                  "example": "$585.8 million"
+                }
+              }
+            }
           }
         ],
         "responses": {

@@ -37,6 +37,22 @@ exports.getSingle = async (req, res) => {
 // CREATE HERO
 exports.createHero = async (req, res) => {
 
+    /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Hero information',
+        required: true,
+        schema: {
+            name: 'Spider-Man',
+            realName: 'Peter Parker',
+            team: 'Avengers',
+            power: 'Spider Powers',
+            actor: 'Tom Holland',
+            firstAppearance: 1962,
+            isAlive: true,
+            universe: 'Earth-616'
+        }
+    } */
+
     try {
 
         const hero = new Hero(req.body);
@@ -44,18 +60,18 @@ exports.createHero = async (req, res) => {
         const savedHero = await hero.save();
 
         res.status(201).json({
-    success: true,
-    message: "Hero created successfully",
-    hero: savedHero
-});
+            success: true,
+            message: "Hero created successfully",
+            hero: savedHero
+        });
 
     } catch(err){
 
         res.status(500).json({
-    success: false,
-    message: "Internal Server Error",
-    error: err.message
-});
+            success: false,
+            message: "Internal Server Error",
+            error: err.message
+        });
 
     }
 
@@ -63,34 +79,52 @@ exports.createHero = async (req, res) => {
 
 // UPDATE HERO
 exports.updateHero = async (req, res) => {
-  try {
 
-    const updatedHero = await Hero.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
+    /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Updated hero information',
+        required: true,
+        schema: {
+            name: 'Spider-Man',
+            realName: 'Peter Parker',
+            team: 'Avengers',
+            power: 'Spider Powers',
+            actor: 'Tom Holland',
+            firstAppearance: 1962,
+            isAlive: true,
+            universe: 'Earth-616'
+        }
+    } */
 
-    if (!updatedHero) {
-      return res.status(404).json({
-        message: "Hero not found"
-      });
+    try {
+
+        const updatedHero = await Hero.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+
+        if (!updatedHero) {
+            return res.status(404).json({
+                message: "Hero not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Hero updated successfully",
+            hero: updatedHero
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
     }
 
-    res.status(200).json({
-      success: true,
-      message: "Hero updated successfully",
-      hero: updatedHero
-    });
-
-  } catch (err) {
-
-    res.status(500).json({
-      success: false,
-      message: err.message
-    });
-
-  }
 };
 
 // DELETE HERO
