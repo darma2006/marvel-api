@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const authenticate = require("../middleware/authenticate");
 
 const moviesController = require("../controllers/movies");
 
@@ -14,6 +15,7 @@ router.get("/:id", moviesController.getSingle);
 
 router.post(
   "/",
+  authenticate,
   movieRules(),
   checkValidation,
   moviesController.createMovie
@@ -21,11 +23,16 @@ router.post(
 
 router.put(
   "/:id",
+  authenticate,
   movieRules(),
   checkValidation,
   moviesController.updateMovie
 );
 
-router.delete("/:id", moviesController.deleteMovie);
+router.delete(
+  "/:id",
+  authenticate,
+  moviesController.deleteMovie
+);
 
 module.exports = router;

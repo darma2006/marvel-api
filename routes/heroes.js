@@ -1,3 +1,4 @@
+const authenticate = require("../middleware/authenticate");
 const express = require("express");
 const router = express.Router();
 
@@ -13,19 +14,25 @@ router.get("/", heroesController.getAll);
 router.get("/:id", heroesController.getSingle);
 
 router.post(
-    "/",
-    heroRules(),
-    checkValidation,
-    heroesController.createHero
+  "/",
+  authenticate,
+  heroRules(),
+  checkValidation,
+  heroesController.createHero
 );
 
 router.put(
-    "/:id",
-    heroRules(),
-    checkValidation,
-    heroesController.updateHero
+  "/:id",
+  authenticate,
+  heroRules(),
+  checkValidation,
+  heroesController.updateHero
 );
 
-router.delete("/:id", heroesController.deleteHero);
+router.delete(
+  "/:id",
+  authenticate,
+  heroesController.deleteHero
+);
 
 module.exports = router;
