@@ -13,6 +13,9 @@ router.get("/", moviesController.getAll);
 
 router.get("/:id", moviesController.getSingle);
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.post(
   "/",
   authenticate,
@@ -21,6 +24,9 @@ router.post(
   moviesController.createMovie
 );
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.put(
   "/:id",
   authenticate,
@@ -29,6 +35,9 @@ router.put(
   moviesController.updateMovie
 );
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.delete(
   "/:id",
   authenticate,

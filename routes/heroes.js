@@ -13,6 +13,9 @@ router.get("/", heroesController.getAll);
 
 router.get("/:id", heroesController.getSingle);
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.post(
   "/",
   authenticate,
@@ -21,6 +24,9 @@ router.post(
   heroesController.createHero
 );
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.put(
   "/:id",
   authenticate,
@@ -29,6 +35,9 @@ router.put(
   heroesController.updateHero
 );
 
+// #swagger.security = [{
+//   "googleAuth": []
+// }]
 router.delete(
   "/:id",
   authenticate,
